@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>{{title|deafult(YouTrack)}}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="./bootstrap/css/bootstrap-theme.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
+    <link href="./css/style.css" rel="stylesheet">
+</head>
+
+<body class="background-dark">
+    <header>
+        <nav class="navbar navbar-fixed-top  navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">YouTrack</a>
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-collapse" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+
+                <div id="nav-collapse" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav nav-pills  navbar-right ">
+                        <li>
+                            <a href="#">Все заказы</a>
+                        </li>
+                        <li>
+                            <a href="#">Профиль</a>
+                        </li>
+                        <li>
+                            <a href="#">Выйти</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+        </nav>
+    </header>
+    <main class="relative-container">
+        <form class="panel panel-deafult center" action="/login" method="POST">
+            <div class="panel-body">
+                <nav class="navbar navbar-deafult">
+                    <div class="container-fluid">
+                        <h3 class="navbar-text form-title">Войти как:</h3>
+                        <ul class="nav navbar-nav nav-tabs navbar-right">
+                            <li>
+                                <a href="#" id="user_tab">Пользователь</a>
+                            </li>
+                            <li>
+                                <a href="#" id="curier_tab">Курьер</a>
+                            </li>
+                            <li>
+                                <a href="#" id="company_tab">Компания</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div id="user">
+                    <div class="form-group">
+                        <label for="client_id">Ваш уникальный id: </label>
+                        <input class="form-control">
+                    </div>
+
+                    <button class="btn btn-primary  btn-block">Войти</button>
+                </div>
+                <div class="form-collapsed" id="curier">
+                    <div class="form-group">
+                        <label for="courier_login">Логин курьера: </label>
+                        <input class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="courier_login">Пароль: </label>
+                        <input class="form-control">
+                    </div>
+
+                    <button class="btn btn-primary  btn-block">Войти</button>
+                </div>
+                <div class="form-collapsed" id="company">
+                    <div class="form-group">
+                        <label for="courier_login">Логин компании: </label>
+                        <input class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="courier_login">Пароль: </label>
+                        <input class="form-control">
+                    </div>
+
+                    <button class="btn btn-primary  btn-block">Войти</button>
+                </div>
+            </div>
+
+        </form>
+    </main>
+    <script>
+        (function () {
+            $("#user_tab").on('click', function () {
+                $("#user").show();
+                $("#company").hide();
+                $('#curier').hide();
+            });
+            $("#curier_tab").on('click', function () {
+                $("#user").hide();
+                $("#company").hide();
+                $('#curier').show();
+            });
+            $('#company_tab').on('click', function () {
+                $("#user").hide();
+                $("#company").show();
+                $('#curier').hide();
+            });
+        })();
+    </script>
+</body>
+
+</html>

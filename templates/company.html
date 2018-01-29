@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>{{title|deafult(YouTrack)}}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="./bootstrap/css/bootstrap-theme.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
+    <link href="./css/style.css" rel="stylesheet">
+
+    <link href="./css/input.css" rel="stylesheet">
+
+</head>
+
+<body class="background-light">
+    <header>
+        <nav class="navbar navbar-fixed-top  navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">YouTrack</a>
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-collapse" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+
+                <div id="nav-collapse" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav nav-pills  navbar-right ">
+                        <li>
+                            <a href="#">Все заказы</a>
+                        </li>
+                        <li>
+                            <a href="#">Профиль</a>
+                        </li>
+                        <li>
+                            <a href="#">Выйти</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+        </nav>
+    </header>
+    <main class="relative-container">
+        <div class="logo-container">
+            <img src="./images/placeholder.svg" alt="company logo" class="logo">
+        </div>
+        <section class="profile-content name">
+            <textarea class="hidden-input ajax-send input-center" id="company_name">Название компании</textarea>
+            <div class="alert alert-danger alert-hidden error-banner" for="company_name">Ошибка при обновлении названия</div>
+        </section>
+        <section class="profile-content offset-top padding">
+            <div>
+                <label class="inline">ИНН: </label>
+                <input class="hidden-input ajax-send inline" id="inn" value="123-456-789-123">
+            </div>
+            <div class="alert alert-danger alert-hidden error-banner" for="inn">Ошибка при обновлении ИНН</div>
+            <div>
+                    <label class="inline">Номер телефона: </label>
+                    <input class="hidden-input ajax-send inline" id="tel" value="+79651234567">
+            </div>
+            <div class="alert alert-danger alert-hidden error-banner" for="tel">Ошибка при обновлении номера телефона</div>
+            <div>
+                    <label class="inline">Email: </label>
+                    <input class="hidden-input ajax-send inline" id="email" value="example@example.ru" type="email">
+            </div>
+            <div class="alert alert-danger alert-hidden error-banner" for="email">Ошибка при обновлении email</div>
+            <label>Описание: </label>
+            <textarea class="hidden-input ajax-send" id="descr" style="display: block; width: 100%;">Lorem impulsum dolor sit amet Lorem impulsum dolor sit amet Lorem impulsum dolor sit amet
+            </textarea>
+            <div class="alert alert-danger alert-hidden error-banner" for="descr">Ошибка при обновлении описания</div>
+        </section>
+    </main>
+
+    <script src="./js/ajaxform.js"></script>
+    <script src="./js/input.js"></script>
+    <script>
+            hidden_input(true);
+    </script>
+</body>
+
+</html>
